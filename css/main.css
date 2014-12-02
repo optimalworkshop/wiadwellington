@@ -112,7 +112,7 @@ a {
 
 .hero {
   position: relative;
-  padding: 40px 0;
+  padding: 50px 0;
   text-align: center;
   background: url(../img/wellington.jpg) center;
   -webkit-background-size: auto 100%;
@@ -127,7 +127,7 @@ a {
     font-weight: 300; }
   .hero .btn {
     display: inline-block;
-    margin: 80px 0 20px 0;
+    margin: 180px 0 20px 0;
     padding: 14px 30px;
     color: #222222;
     background: #ffed19;
@@ -166,7 +166,7 @@ a {
     transform: translateY(0); } }
 
 .section {
-  padding: 30px 0; }
+  padding: 40px 0; }
   .section .section-title {
     color: #81429b; }
   .section a {
