@@ -1,3 +1,11 @@
 $( document ).ready(function() {
-  $('nav a').smoothScroll();
+  
+  $('nav a, .more-arrow').smoothScroll();
+
+  $('#subscribeLink').click(function() {
+    setTimeout( function() {
+      $('.email').focus();
+    }, 1000 );
+  });
+
 });

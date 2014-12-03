@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 html,
 button,
@@ -11,11 +12,11 @@ html {
   line-height: 1.4; }
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: #c6a0d6;
   text-shadow: none; }
 
 ::selection {
-  background: #b3d4fc;
+  background: #c6a0d6;
   text-shadow: none; }
 
 hr {
@@ -72,19 +73,24 @@ nav a {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
-  color: #ffed19;
-  font-weight: 300; }
+  color: #f6f6f6;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; }
 
 nav a:hover,
 nav a:active,
 nav a:focus {
   outline: none;
-  color: #f6f6f6; }
+  color: #ffed19; }
 
 nav .btn {
   border: 2px solid;
   padding: 6px 20px;
-  margin-left: 10px; }
+  margin-left: 10px;
+  border-radius: 2px;
+  color: #ffed19; }
+  nav .btn:hover {
+    color: #f6f6f6; }
 
 /* ===============
     ALL: IE Fixes
@@ -98,12 +104,14 @@ nav .btn {
 h1, h2, h3 {
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500; }
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; }
 
 a {
   color: #81429b;
   font-weight: 400;
-  text-decoration: none; }
+  text-decoration: none;
+  outline: none; }
 
 .wrapper {
   width: 90%;
@@ -121,22 +129,18 @@ a {
   background-size: auto 100%;
   color: #f6f6f6; }
   .hero h1 {
+    padding: 0;
+    margin-bottom: 0px;
+    font-size: 40px;
     color: #ffed19; }
-  .hero h2, .hero h3 {
-    margin: 10px 0;
-    font-weight: 300; }
-  .hero .btn {
-    display: inline-block;
-    margin: 180px 0 20px 0;
-    padding: 14px 30px;
-    color: #222222;
-    background: #ffed19;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 22px;
-    font-weight: 500; }
-    .hero .btn:hover {
-      background: #f6f6f6; }
+  .hero h2 {
+    margin: 0 0 30px 0;
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff9b2; }
+  .hero h3 {
+    margin: 5px 0;
+    font-weight: 400; }
   .hero .photo-cred {
     position: absolute;
     bottom: 10px;
@@ -146,10 +150,36 @@ a {
     .hero .photo-cred a {
       color: #9c58b8; }
 
+.register {
+  margin: 180px 0 20px 0;
+  position: relative; }
+  .register .btn {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 14px 30px;
+    color: #222222;
+    background: #ffed19;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    z-index: 1;
+    border-radius: 2px; }
+    .register .btn:hover {
+      background: #f6f6f6; }
+  .register img {
+    position: absolute;
+    right: 60px;
+    bottom: 40px;
+    width: 220px; }
+
 .wiad-link {
   position: absolute;
   top: 0;
-  left: 20px;
+  left: 30px;
   width: 100px;
   transform: translateY(-200px);
   -webkit-animation: slideIn 1s 3s ease-in-out forwards;
@@ -165,14 +195,17 @@ a {
   to {
     transform: translateY(0); } }
 
+.more-arrow {
+  font-size: 26px; }
+
 .section {
   padding: 40px 0; }
   .section .section-title {
     color: #81429b; }
-  .section a {
+  .section a:not(".more-arrow") {
     border-bottom: 1px solid;
     transition: all 100ms; }
-    .section a:hover {
+    .section a:not(".more-arrow"):hover {
       border-bottom: 2px solid;
       padding-bottom: 2px; }
 
@@ -239,6 +272,10 @@ i.section-icon {
 
 .speaker {
   margin: 30px 0; }
+  .speaker h3 .subtitle {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #CCC; }
 
 .profile-pic {
   display: block;
@@ -253,14 +290,15 @@ i.section-icon {
 
 .profile-desc {
   font-weight: 200; }
-  .profile-desc h3 {
-    font-weight: 400; }
-    .profile-desc h3 .subtitle {
-      font-weight: 300; }
 
 .sponsor-logo {
   width: 80%;
   margin: 0 10%; }
+
+.sponsor-you {
+  position: relative;
+  top: 40px;
+  transform: scale(1.6); }
 
 .social {
   margin: 40px 0;
@@ -287,7 +325,7 @@ i.section-icon {
   border: 2px solid #fff9b2; }
   .mc-form input.email {
     position: relative;
-    padding: 10px 0;
+    padding: 10px;
     margin-bottom: 10px;
     background: #fff9b2;
     transition: all 300ms; }
@@ -310,6 +348,11 @@ i.section-icon {
     margin: 0 1.5%;
     float: left; }
 
+  .hero h1 {
+    font-size: 50px; }
+  .hero h2 {
+    font-size: 36px; }
+
   /* ========================
       INTERMEDIATE: IE Fixes
      ======================== */
@@ -322,6 +365,12 @@ i.section-icon {
   .wiad-link {
     position: fixed;
     top: auto; }
+
+  .register .btn {
+    display: inline-block;
+    width: auto; }
+  .register img {
+    bottom: 10px; }
 
   .sponsor {
     float: left;

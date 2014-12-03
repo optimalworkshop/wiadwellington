@@ -1,4 +1,5 @@
 @import "includes";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
@@ -16,12 +17,12 @@ html {
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: lighten($color-purple,30%);
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: lighten($color-purple,30%);
     text-shadow: none;
 }
 
@@ -89,15 +90,16 @@ nav a {
     display: block;
     padding: 10px 20px;
     text-decoration: none;
-    color: $color-yellow;
-    font-weight: 300;
+    color: $color-white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 nav a:hover,
 nav a:active,
 nav a:focus {
     outline: none;
-    color: $color-white;
+    color: $color-yellow;
 }
 
 nav {
@@ -105,6 +107,11 @@ nav {
         border: 2px solid;
         padding: 6px 20px;
         margin-left: 10px;
+        border-radius: 2px;
+        color: $color-yellow;
+        &:hover {
+            color: $color-white;
+        }
     }
 }
 
@@ -123,13 +130,15 @@ nav {
 h1, h2, h3 {
     text-align: center;
     text-transform: uppercase;
-    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 a {
     color: $color-purple;
     font-weight: 400;
     text-decoration: none;
+    outline: none;
 }
 
 .wrapper {
@@ -149,26 +158,20 @@ a {
     background-size: auto 100%;
     color: $color-white;
     h1 {
+        padding: 0;
+        margin-bottom: 0px;
+        font-size: 40px;
         color: $color-yellow;
     }
-    h2, h3 {
-        margin: 10px 0;
-        font-weight: 300;
+    h2 {
+        margin: 0 0 30px 0;
+        font-size: 30px;
+        font-weight: 400;
+        color: lighten($color-yellow, 30%);
     }
-    .btn {
-        display: inline-block;
-        margin: 180px 0 20px 0;
-        padding: 14px 30px;
-        color: $color-black;
-        background: $color-yellow;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 22px;
-        font-weight: 500;
-        &:hover {
-            background: $color-white;
-
-        }
+    h3 {
+        margin: 5px 0;
+        font-weight: 400;
     }
     .photo-cred {
         position: absolute;
@@ -182,10 +185,41 @@ a {
     }
 }
 
+.register {
+    margin: 180px 0 20px 0;
+    position: relative;
+    .btn {
+        position: relative;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        padding: 14px 30px;
+        color: $color-black;
+        background: $color-yellow;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        z-index: 1;
+        border-radius: 2px;
+        &:hover {
+            background: $color-white;
+
+        }
+    }
+    img {
+        position: absolute;
+        right: 60px;
+        bottom: 40px;
+        width: 220px;
+    }
+}
+
 .wiad-link {
     position: absolute;
     top: 0;
-    left: 20px;
+    left: 30px;
     width: 100px;
     transform: translateY(-200px);
     -webkit-animation: slideIn 1s 3s ease-in-out forwards;
@@ -205,12 +239,16 @@ a {
     }
 }
 
+.more-arrow {
+    font-size: 26px;
+}
+
 .section {
     padding: 40px 0;
     .section-title {
         color: $color-purple;
     }
-    a {
+    a:not(".more-arrow") {
         border-bottom: 1px solid;
         transition: all 100ms;
         &:hover {
@@ -300,6 +338,13 @@ i.section-icon {
 
 .speaker {
     margin: 30px 0;
+    h3 {
+        .subtitle {
+            font-size: 0.9em;
+            font-weight: 400;
+            color: #CCC;
+        }
+    }
 }
 
 .profile-pic {
@@ -317,17 +362,17 @@ i.section-icon {
 
 .profile-desc {
     font-weight: 200;
-    h3 {
-        font-weight: 400;
-        .subtitle {
-            font-weight: 300;
-        }
-    }
 }
 
 .sponsor-logo {
     width: 80%;
     margin: 0 10%;
+}
+
+.sponsor-you {
+    position: relative;
+    top: 40px;
+    transform: scale(1.6);
 }
 
 .social {
@@ -360,7 +405,7 @@ i.section-icon {
         border: 2px solid lighten($color-yellow, 30%);
         &.email {
             position: relative;
-            padding: 10px 0;
+            padding: 10px;
             margin-bottom: 10px;
             background: lighten($color-yellow, 30%);
             transition: all 300ms;
@@ -394,6 +439,15 @@ i.section-icon {
         float: left;
     }
 
+    .hero {
+        h1 {
+            font-size: 50px;
+
+        }
+        h2 {
+            font-size: 36px;
+        }
+    }
 
 /* ========================
     INTERMEDIATE: IE Fixes
@@ -413,6 +467,16 @@ i.section-icon {
     .wiad-link {
         position: fixed;
         top: auto;
+    }
+
+    .register {
+        .btn {
+            display: inline-block;
+            width: auto;
+        }
+        img {
+            bottom: 10px;
+        }
     }
 
     .sponsor {
